@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,700&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0 !important;
+    font-family: "arimo";
+}
+
+
+footer {
+    bottom: 0;
+    height: 3%;
+
+}
+
+
+#add-blog {
+    cursor: pointer;
+    /* font-size: 3em; */
+}
+
+#add-blog:hover>a {
+    background-color: yellow;
+}
+
+
+
+/* .options-box.add-blog:hover {
+    background-color: yellow;
+    color: white;
+    cursor: pointer;
+
+} */
+
+/*content page */
+.first-page {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    color: black;
+}
+
+.first-page-container {
+    background: url('background.png') center no-repeat;
+    background-size: cover;
+    overflow: none !important;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    width: 57%;
+    height: 100%;
+
+}
+
+.right {
+    width: 43%;
+    height: 100%;
+    background-color: #fdde33;
+    font-family: Josefin Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 100px;
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    padding-right: 80px;
+    padding-bottom: 100px;
+
+}
+
+.blogs-container {
+    background-color: #C5C8FB;
+    height: 97vh;
+    padding-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    /* padding: 2em; */
+
+}
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+}
+
+.header-box {
+    background-color: yellow;
+    border-radius: 50px;
+    height: 80%;
+    width: 25%;
+}
+
+.options-box {
+    display: flex;
+    align-items: left;
+    font-weight: 700;
+    justify-content: left;
+    font-size: 3em;
+
+}
+
+.header {
+
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    justify-content: center;
+    font-size: 3em;
+    height: 100%;
+}
+
+
+.blogs-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.blog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 90%;
+    height: 7em;
+}
+
+.blog-title {
+    font-weight: 700;
+
+}
+
+.blog-preview-descripion {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: right;
+    width: 70%;
+
+}
+
+.blog-preview-media {
+    width: 20%;
+}
+
+.blog-preview-details {
+    width: 17%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* add blog */
+.create-blog-container {
+    background-color: #C5C8FB;
+    height: 97vh;
+    padding-top: 2em;
+    padding-left: 2em;
+}
+
+#add-blog-form {
+    display: flex;
+    flex-direction: column;
+    width: 64%;
+    height: 60%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.label-text {
+    color: grey;
+    font-size: 20px;
+    text-align: center;
+}
+
+#add-blog-form>label {
+    margin: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#add-blog-form>label>input {
+    border: 1px solid #bbb8b8;
+    border-radius: 10px;
+    width: 100%;
+    height: 5vh;
+}
+
+/* ::placeholder {
+    color: grey;
+} */
+
+#add-blog-form>label>textarea {
+    border: none !important;
+    border-radius: 10px;
+    width: 100%;
+    height: 9vh;
+}

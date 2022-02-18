@@ -1,0 +1,54 @@
+<%- include('./partials/head.ejs'); %>
+
+<body>
+
+    <div class="create-blog-container">
+        <<div class="header-container">
+
+            <div class="header-box">
+                <span class="header"> Add Blog </span>
+            </div>
+            <div class="options-box">
+                <span id="add-blog">
+                    <a id="add-blog-a"> <i class="fas fa-home"></i> </a>
+                    <!-- <i class="fa-solid fa-plus"></i> -->
+                </span>
+
+            </div>
+
+        </div>
+        <form id="add-blog-form" action="/content" method="POST" enctype="multipart/form-data">
+            <label for="title">
+                <span class="label-text">Title</span>
+                <br>
+                <input type="text" id="title" name="title" value="no title">
+            </label>
+            <label for="title">
+                <span class="label-text">Your Nickname</span>
+                <br>
+                <input type="text" id="nickname" name="nickname" value="anonymous">
+            </label>
+            <!-- <p id="info-nickname">preferably with your first name in it</p> -->
+            <label for="snip">
+                <span class="label-text">Snippet</span>
+                <br>
+                <input type="text" id="snip" name="snippet" required>
+            </label>
+            <label for="media">
+                <span class="label-text">Media</span>
+                <br>
+                <input type="file" id="media" name="media">
+            </label>
+            <label for="body">
+                <span class="label-text">Describe here</span>
+                <br>
+                <textarea type="text" id="body" name="body" required></textarea>
+            </label>
+            <button>Submit</button>
+        </form>
+    </div>
+
+</body>
+<%- include('./partials/footer.ejs'); %>
+
+</html>
