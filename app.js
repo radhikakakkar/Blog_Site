@@ -5,11 +5,15 @@ const mongoose = require('mongoose');
 const Blog = require('./models/blog');
 const app = express();
 const multer = require('multer');
+const path = require('path');
 
 //connection to db
 const dbUrl = 'mongodb+srv://mongo1:test123@nodetuts.vcus7.mongodb.net/node-tuts?retryWrites=true&w=majority';
 mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then((result) => app.listen(3000))
+    .then((result) => {
+        console.log('db connected');
+        app.listen(3000);
+    })
     .catch((err) => console.log(err));
 
 //ejs 
@@ -19,6 +23,17 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
+
+const storage = multer.diskStorage({
+    destination: function(req, file, cb){
+      cb(null, './uploads/');
+    },
+    filename: function(req, file, cb){
+      cb(null, Date.now()  + '.jpg');
+    }
+  });
+  const upload = multer({storage : storage});
+
 
 //routes
 app.get('/', (req, res) => {
@@ -39,10 +54,14 @@ app.get('/content', (req, res) => {
             console.log(err);
         });
 })
-app.post('/content', (req, res) => {
-    console.log(req.body);
-    const blog = new Blog(req.body);
-    //saving blog to the db
+app.post('/content', upload.single('media'), (req, res) => {
+    const blog = new Blog({
+        title: req.body.title,
+        nickname: req.body.nickname,
+        snippet: req.body.snippet,
+        body: req.body.body,
+        media: req.file.path
+    });
     blog.save()
         .then((result) => {
             res.redirect('/content');

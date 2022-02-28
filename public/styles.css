@@ -85,6 +85,7 @@ footer {
     /* padding: 2em; */
 
 }
+
 .header-container {
     display: flex;
     flex-direction: row;
@@ -175,10 +176,11 @@ footer {
     display: flex;
     flex-direction: column;
     width: 64%;
-    height: 60%;
+    height: 40%;
     justify-content: center;
     align-items: center;
     margin: auto;
+    margin-top: 4em;
 }
 
 .label-text {
@@ -188,18 +190,20 @@ footer {
 }
 
 #add-blog-form>label {
-    margin: 10px;
+    margin: 0.6em;
     width: 50%;
     display: flex;
     flex-direction: column;
-
+    justify-content: space-evenly;
 }
+
 
 #add-blog-form>label>input {
     border: 1px solid #bbb8b8;
     border-radius: 10px;
     width: 100%;
     height: 5vh;
+
 }
 
 /* ::placeholder {
@@ -211,4 +215,13 @@ footer {
     border-radius: 10px;
     width: 100%;
     height: 9vh;
+}
+
+#add-blog-btn {
+    background: yellow;
+    color: black;
+    border: grey 1px dotted;
+    width: 35%;
+    margin-top: 3em;
+    box-shadow: 4px 4px 3px grey;
 }

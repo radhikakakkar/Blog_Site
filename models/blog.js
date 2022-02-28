@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const blogSchema = new Schema({
     title: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     nickname: {
         type: String,
@@ -18,10 +19,18 @@ const blogSchema = new Schema({
     body: {
         type: String,
         required: true
-    }
-    // image: {
+
+    },
+    // media: {
+    //     data: Buffer,
+    //     contentType: String
 
     // }
+    media: {
+        type: String,
+        required: true
+    }
+
 }, { timestamps: true });
 
 const Blog = mongoose.model('Blog', blogSchema);
