@@ -21,18 +21,19 @@ app.set('view engine', 'ejs');
 
 //middleware
 app.use(express.static('public'));
+//app.use(express.static('uploads'));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 const storage = multer.diskStorage({
-    destination: function(req, file, cb){
-      cb(null, './uploads/');
+    destination: function (req, file, cb) {
+        cb(null, 'public/uploads');
     },
-    filename: function(req, file, cb){
-      cb(null, Date.now()  + '.jpg');
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + path.extname(file.originalname));
     }
-  });
-  const upload = multer({storage : storage});
+});
+const upload = multer({ storage: storage });
 
 
 //routes
@@ -53,6 +54,19 @@ app.get('/content', (req, res) => {
         .catch((err) => {
             console.log(err);
         });
+})
+app.get('/blog/:id', (req, res) => {
+    const id = req.params.id;
+    // console.log(id);
+
+    Blog.findById(id)
+        .then(result => {
+            res.render('blog-view', { title: 'blog details', blog: result });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
 })
 app.post('/content', upload.single('media'), (req, res) => {
     const blog = new Blog({

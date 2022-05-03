@@ -1,5 +1,4 @@
 <%- include('./partials/head.ejs'); %>
-
 <body>
     <div class="first-page">
         <div class="first-page-container">
@@ -23,7 +22,7 @@
             </div>
             <div class="options-box">
                 <span id="add-blog">
-                    <a id="add-blog-a"> <i class="fa fa-plus"></i> </a>
+                    <a href="http://localhost:3000/create" id="add-blog-a"> + </a>
                     <!-- <i class="fa-solid fa-plus"></i> -->
                 </span>
             </div>
@@ -33,20 +32,22 @@
         <div class="blogs-content">
             <% if(blogs.length  > 0) { %>
             <% blogs.forEach(blog => { %>
-            <div class="blog">
-                <div class="blog-preview-media">
-                    <img src="../public/uploads/<%= blog.media %>" alt="loading...">
-                </div>
-                <div class="blog-preview-descripion">
-                    <span class="blog-title"> <%= blog.title %> </span><br>
-                    <span class="blog-snippet"> <%= blog.snippet %> </span>
-                </div>
-                <div class="blog-preview-details">
-                    <span class="blog-author"> <%= blog.nickname %> </span>
-                    <i class="fa fa-heart"></i>
-                    <span class="blog-likes"> <%= blog.likes %> </span>
-                </div>
-            </div><br><br>
+            <a class="single" href="blog/<%= blog._id %>">
+                <div class="blog">
+                    <div class="blog-preview-media">
+                        <img src="<%= blog.media.slice(7) %>" height="100px" width="100px" alt="loading...">
+                    </div>
+                    <div class="blog-preview-descripion">
+                        <span class="blog-title"> <%= blog.title %> </span><br>
+                        <span class="blog-snippet"> <%= blog.snippet %> </span>
+                    </div>
+                    <div class="blog-preview-details">
+                        <span class="blog-author"> <%= blog.nickname %> </span>
+                        <i class="fa fa-heart"></i>
+                        <span class="blog-likes"> <%= blog.likes %> </span>
+                    </div>
+                </div><br><br>
+            </a>
             <% }) %>
             <% } else { %>
             <span> You are the first one here this week! </span>

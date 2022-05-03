@@ -121,12 +121,14 @@ footer {
 }
 
 
-.blogs-content {
+.blogs-content a {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 80%;
+    text-decoration: none;
+    color: black;
 }
 
 .blog {
@@ -217,11 +219,15 @@ footer {
     height: 9vh;
 }
 
-#add-blog-btn {
+#add-blog-a:hover {
     background: yellow;
     color: black;
     border: grey 1px dotted;
     width: 35%;
     margin-top: 3em;
     box-shadow: 4px 4px 3px grey;
+}
+
+a.single {
+    cursor: pointer;
 }

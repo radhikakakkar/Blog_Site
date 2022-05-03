@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+//public/uploads/1646223996570.jpg
 
 const blogSchema = new Schema({
     title: {
@@ -21,11 +22,7 @@ const blogSchema = new Schema({
         required: true
 
     },
-    // media: {
-    //     data: Buffer,
-    //     contentType: String
-
-    // }
+   
     media: {
         type: String,
         required: true

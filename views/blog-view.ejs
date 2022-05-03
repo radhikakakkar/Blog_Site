@@ -1,0 +1,26 @@
+<%- include('./partials/head.ejs'); %>
+
+<body>
+    <div class="blog-view-container">
+        <div class="blog-main">
+            <div class="blog-preview-media">
+                <img src="<%= blog.media.slice(7) %>" height="300px" width="300px" alt="loading...">
+            </div>
+            <div class="blog-preview-descripion">
+                <span class="blog-title"> <%= blog.title %> </span><br>
+                <span class="blog-snippet"> <%= blog.snippet %> </span>
+                <!-- <span class="blog-body"> <%= blog.body %> </span> -->
+            </div>
+            <div class="blog-preview-details">
+                <span class="blog-author"> <%= blog.nickname %> </span>
+                <i class="fa fa-heart"></i>
+                <span class="blog-likes"> <%= blog.likes %> </span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<%- include('./partials/footer.ejs'); %>
+
+</html>
